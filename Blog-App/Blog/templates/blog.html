@@ -3,7 +3,6 @@
 {% block content %}
 
 
-
 <div class="container border border-success">
 	<div class="container">
 		<img src="{{ blog.ThumbNail.url }}" class="img-thumbnail" width="285" height="300" /><br>	
@@ -18,10 +17,11 @@
 
 	<div class="container">
 		<article>
+			{% for blg in blg_field%}
 		<p class="text-justify">
-			{{ blog.BlogField }}
-			
+				{{ blg }}
 		</p>
+		{% endfor %}
 		</article>
 	</div>
 </div>
