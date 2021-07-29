@@ -5,23 +5,24 @@
 
 <div class="row">
 {% for blog in blogs %}
-		<div class="col-lg-3">
-		
-		<div class="container">
-			<img src="{{ blog.ThumbNail.url }}" class="img-thumbnail" width="285" height="300" /><br>	
+	{% if blog.isPrivate == False %}
+		<div class="col-lg-3">	
+			<div class="container">
+				<img src="{{ blog.ThumbNail.url }}" class="img-thumbnail" width="285" height="300" /><br>	
+			</div>
+			<div class="container">
+				<a href="{%url 'blog_in_detail' blog.id%}" class="text-primary text-jusify">
+					{{ blog.Title }}
+				</a>
+			</div>
+			<div class="container">
+				<small class="text text-muted">
+				{{ blog.Date }} / {{ blog.Author }}
+				</small>
+			</div>
+			<br>
 		</div>
-		<div class="container">
-			<a href="{%url 'blog_in_detail' blog.id%}" class="text-primary text-jusify">
-				{{ blog.Title }}
-			</a>
-		</div>
-		<div class="container">
-			<small class="text text-muted">
-			{{ blog.Date }} / {{ blog.Author }}
-			</small>
-		</div>
-		<br>
-		</div>
+	{% endif %}
 {% endfor %}
 </div>
 
