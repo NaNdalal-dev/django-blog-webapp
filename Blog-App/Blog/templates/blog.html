@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="container border border-success">
+	<div class="container">
+		<img src="{{ blog.ThumbNail.url }}" class="img-thumbnail" width="285" height="300" /><br>	
+	</div>
+	<div class="container">
+	<h2 class="text text-secondary text-jusify">
+		{{ blog.Title }}
+	</h2>
+		<small class="text text-muted text-justify">{{ blog.Date}} / {{ blog.Author }}</small>	
+		<hr>
+	</div>
+
+	<div class="container">
+		<article>
+		<p class="text-justify">
+			{{ blog.BlogField }}
+			
+		</p>
+		</article>
+	</div>
+</div>
+</div>
+
+{% endblock %}
